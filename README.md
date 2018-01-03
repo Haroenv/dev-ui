@@ -4,10 +4,11 @@ I very quickly tried to make scaffolding for a UI on top of npm/yarn, like [Suni
 
 ## Todo
 
+* [ ] stream output correctly
 * [x] get possible scripts (/scripts)
 * [x] run script (/scripts/run/:script)
-  * [ ] stream output correctly
 * [x] get installed dependencies (/dependencies)
+* [x] install dependency
+* [x] remove dependency
 * [ ] search for dependency (https://github.com/algolia/npm-search)
-* [ ] install dependency
 * [ ] UI
