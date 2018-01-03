@@ -1,0 +1,26 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "description": "A ui for npm and yarn",
+  "main": "index.js",
+  "author": "Haroen Viaene",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "micro",
+    "develop": "micro-dev",
+    "test": "echo hello world",
+    "yes": "yes hello world"
+  },
+  "dependencies": {
+    "execa": "^0.8.0",
+    "fs-router": "^0.4.0",
+    "has-yarn": "^1.0.0",
+    "micro": "^9.0.2",
+    "micro-cors": "^0.0.4",
+    "read-pkg-up": "^3.0.0"
+  },
+  "devDependencies": {
+    "micro-dev": "^2.1.1"
+  }
+}
