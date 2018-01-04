@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "start": "micro",
-    "develop": "micro-dev",
+    "develop": "concurrently \"micro-dev --ignore=.cache\\|dist\\|ui\" \"parcel watch index.html --public-url ./\"",
     "test": "echo hello world",
     "yes": "yes hello world"
   },
@@ -18,9 +18,16 @@
     "has-yarn": "^1.0.0",
     "micro": "^9.0.2",
     "micro-cors": "^0.0.4",
+    "mime": "^2.1.0",
     "read-pkg-up": "^3.0.0"
   },
   "devDependencies": {
-    "micro-dev": "^2.1.1"
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "concurrently": "^3.5.1",
+    "micro-dev": "^2.1.1",
+    "parcel-bundler": "^1.4.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   }
 }
