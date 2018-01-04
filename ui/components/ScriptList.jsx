@@ -15,7 +15,7 @@ const Command = styled.div`
   font-family: monospace;
 `;
 
-const ScriptList = ({ scripts, onScriptClick }) => (
+const ScriptList = ({ scripts, onScriptClick = () => {} }) => (
   <Container>
     {scripts.map(({ name, command }) => (
       <Section key={name} onClick={() => onScriptClick(name)}>
@@ -33,7 +33,7 @@ ScriptList.propTypes = {
       command: PropTypes.string.isRequired,
     }),
   ),
-  onScriptClick: PropTypes.func.isRequired,
+  onScriptClick: PropTypes.func,
 };
 
 export default ScriptList;
