@@ -5,15 +5,15 @@ import { bindActionCreators } from 'redux';
 
 import { selectors, actions } from '../ducks/scripts';
 import ScriptList from './ScriptList';
-import { Grid, Log } from './styled';
+import { Grid, Log, Wrapper } from './styled';
 
 const Scripts = ({ scripts, log, onScriptClick }) => (
   <Grid col="2">
     <ScriptList scripts={scripts} onScriptClick={onScriptClick} />
-    <div>
+    <Wrapper>
       <h3>Terminal output:</h3>
       <Log dangerouslySetInnerHTML={{ __html: log }} />
-    </div>
+    </Wrapper>
   </Grid>
 );
 

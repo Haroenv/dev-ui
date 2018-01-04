@@ -4,4 +4,11 @@ export const Grid = styled.div`
   grid-template-columns: repeat(${props => props.col}, 1fr);
 `;
 
-export const Log = styled.pre``;
+export const Wrapper = styled.section`
+  overflow: auto;
+`;
+
+export const Log = styled.pre`
+  overflow: auto;
+  padding-bottom: 1em;
+`;
