@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
   try {
     const command = hasYarn() ? 'yarn' : 'npm';
     const { stdout, stderr, kill } = execa(command, ['run', script]);
-    const stream = removeAnsiFromStream(merge(stdout, stderr));
+    const stream = merge(stdout, stderr);
     stream.pipe(process.stdout);
     send(res, 200, stream);
     req.on('close', kill);
@@ -20,6 +20,6 @@ module.exports = async (req, res) => {
   }
 };
 
-const removeAnsiFromStream = stream => {
-  return stream.pipe(map({ wantStrings: true }, stripAnsi));
-};
+// const removeAnsiFromStream = stream => {
+//   return stream.pipe(map({ wantStrings: true }, stripAnsi));
+// };

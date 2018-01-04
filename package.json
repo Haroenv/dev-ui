@@ -43,6 +43,7 @@
     "through2-map": "^3.0.0"
   },
   "devDependencies": {
+    "ansi-html": "^0.0.7",
     "babel-eslint": "^8.1.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-polyfill": "^6.26.0",
