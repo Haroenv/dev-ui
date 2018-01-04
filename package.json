@@ -8,8 +8,9 @@
   "private": true,
   "bin": "./bin/npm-ui.js",
   "scripts": {
-    "start": "micro",
-    "develop": "concurrently \"micro-dev --ignore=dist\\|ui\" \"parcel watch index.html --public-url ./\"",
+    "start": "npm run build && ./bin/npm-ui.js",
+    "develop":
+      "concurrently \"micro-dev --ignore=dist\\|ui\" \"parcel watch index.html --public-url ./\"",
     "build": "parcel build index.html --public-url ./",
     "test": "jest",
     "lint": "eslint . --ext=js,jsx --ignore-path=.gitignore",
