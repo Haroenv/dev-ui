@@ -7,5 +7,7 @@ import { fetchDependencies } from './dependencies';
 
 export default function* index() {
   yield* fetchScripts();
+  yield* fetchDependencies();
   takeLatest(FETCH_SCRIPTS, fetchScripts);
+  takeLatest(FETCH_DEPENDENCIES, fetchDependencies);
 }

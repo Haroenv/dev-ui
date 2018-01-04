@@ -5,14 +5,12 @@ const initialState = {
   },
 };
 
-export const types = {
-  FETCH_DEPENDENCIES: 'FETCH_DEPENDENCIES',
-  SET_DEPENDENCIES: 'SET_DEPENDENCIES',
-};
+export const FETCH_DEPENDENCIES = 'FETCH_DEPENDENCIES';
+export const SET_DEPENDENCIES = 'SET_DEPENDENCIES';
 
 export default (state = initialState, { type, ...payload }) => {
   switch (type) {
-    case types.SET_DEPENDENCIES:
+    case SET_DEPENDENCIES:
       return {
         ...state,
         packageDependencies: {
@@ -26,9 +24,9 @@ export default (state = initialState, { type, ...payload }) => {
 };
 
 export const actions = {
-  fetchDependencies: () => ({ type: types.FETCH_DEPENDENCIES }),
+  fetchDependencies: () => ({ type: FETCH_DEPENDENCIES }),
   setDependencies: ({ dependencies, devDependencies }) => ({
-    type: types.SET_DEPENDENCIES,
+    type: SET_DEPENDENCIES,
     dependencies,
     devDependencies,
   }),
