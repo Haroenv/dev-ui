@@ -1,0 +1,16 @@
+root: true
+extends:
+- eslint:recommended
+- plugin:prettier/recommended
+- plugin:react/recommended
+- plugin:jest/recommended
+parserOptions:
+  ecmaVersion: 2017
+  sourceType: module
+  ecmaFeatures:
+    experimentalObjectRestSpread: true
+    jsx: true
+env:
+  browser: true
+  node: true
+  jest: true
