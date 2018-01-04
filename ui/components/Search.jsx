@@ -10,9 +10,7 @@ import {
 const Hit = ({ hit: { name } }) => <div>{name}</div>;
 
 Hit.propTypes = {
-  hit: {
-    name: PropTypes.string,
-  },
+  hit: PropTypes.object.isRequired,
 };
 
 const Search = () => (

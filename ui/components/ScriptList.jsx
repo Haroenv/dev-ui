@@ -15,10 +15,10 @@ const Command = styled.div`
   font-family: monospace;
 `;
 
-const ScriptList = ({ scripts }) => (
+const ScriptList = ({ scripts, onScriptClick }) => (
   <Container>
     {scripts.map(({ name, command }) => (
-      <Section key={name}>
+      <Section key={name} onClick={() => onScriptClick(name)}>
         <Heading>{name}</Heading>
         <Command>{command}</Command>
       </Section>
@@ -33,6 +33,7 @@ ScriptList.propTypes = {
       command: PropTypes.string.isRequired,
     }),
   ),
+  onScriptClick: PropTypes.func.isRequired,
 };
 
 export default ScriptList;
