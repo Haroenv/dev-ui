@@ -4,12 +4,19 @@
   "description": "A ui for npm and yarn",
   "main": "index.js",
   "author": "Haroen Viaene",
+  "contributors": [
+    {
+      "name": "Lucas Azzola",
+      "url": "https://twitter.com/lucasazzola"
+    }
+  ],
   "license": "MIT",
   "private": true,
   "bin": "./bin/npm-ui.js",
   "scripts": {
     "start": "npm run build && ./bin/npm-ui.js",
-    "develop": "concurrently \"micro-dev --ignore=dist\\|ui\" \"parcel watch index.html --public-url ./\"",
+    "develop":
+      "concurrently \"micro-dev --ignore=dist\\|ui\" \"parcel watch index.html --public-url ./\"",
     "build": "parcel build index.html --public-url ./",
     "test": "jest",
     "lint": "eslint . --ext=js,jsx --ignore-path=.gitignore",
