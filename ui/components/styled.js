@@ -4,7 +4,4 @@ export const Grid = styled.div`
   grid-template-columns: repeat(${props => props.col}, 1fr);
 `;
 
-export const Log = styled.div`
-  font-family: monospace;
-  white-space: pre;
-`;
+export const Log = styled.pre``;
