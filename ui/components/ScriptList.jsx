@@ -6,13 +6,16 @@ const Section = styled.section`
   padding: 1em;
 `;
 
-const ScriptList = ({ scripts }) =>
-  scripts.map(({ name, command }) => (
-    <div key={name}>
-      <h2>{name}</h2>
-      <p>{command}</p>
-    </div>
-  ));
+const ScriptList = ({ scripts }) => (
+  <div>
+    {scripts.map(({ name, command }) => (
+      <div key={name}>
+        <h2>{name}</h2>
+        <p>{command}</p>
+      </div>
+    ))}
+  </div>
+);
 
 ScriptList.propTypes = {
   scripts: PropTypes.arrayOf(

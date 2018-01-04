@@ -1,3 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ScriptList /> matches snapshot 1`] = `Array []`;
+exports[`<ScriptList /> empty 1`] = `<div />`;
+
+exports[`<ScriptList /> with scripts 1`] = `
+<div>
+  <div
+    key="test"
+  >
+    <h2>
+      test
+    </h2>
+    <p>
+      jest
+    </p>
+  </div>
+  <div
+    key="lint"
+  >
+    <h2>
+      lint
+    </h2>
+    <p>
+      eslint .
+    </p>
+  </div>
+</div>
+`;
