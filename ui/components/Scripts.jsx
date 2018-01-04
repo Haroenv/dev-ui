@@ -1,8 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-class Scripts extends Component {
-  render() {
-    return 'Scripts';
-  }
-}
-export default Scripts;
+import { selectors } from '../ducks/scripts';
+import ScriptList from './ScriptList';
+
+const Scripts = ({ scripts }) => (
+  <ScriptList scripts={scripts} />
+);
+
+Scripts.propTypes = {
+  scripts: PropTypes.array.isRequired,
+};
+
+export default connect(state => ({
+  scripts: selectors.getScripts(state.scripts),
+}))(Scripts);
