@@ -1,6 +1,3 @@
-import ansiHtml from 'ansi-html';
-import stripAnsi from 'strip-ansi';
-
 const initialState = {
   packageScripts: {},
   runningScriptName: null,
@@ -28,8 +25,7 @@ export default (state = initialState, { type, ...payload }) => {
     case SCRIPT_LOG_APPEND:
       return {
         ...state,
-        runningScriptLog:
-          state.runningScriptLog + stripAnsi(ansiHtml(payload.text)),
+        runningScriptLog: state.runningScriptLog + payload.text,
       };
     default:
       return state;
