@@ -9,6 +9,7 @@
   "scripts": {
     "start": "micro",
     "develop": "concurrently \"micro-dev --ignore=.cache\\|dist\\|ui\" \"parcel watch index.html --public-url ./\"",
+    "build": "parcel build index.html --public-url ./",
     "test": "echo hello world",
     "yes": "yes hello world"
   },
