@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ScriptList /> empty 1`] = `<styled.div />`;
+
+exports[`<ScriptList /> with scripts 1`] = `
+<styled.div>
+  <styled.section
+    key="test"
+  >
+    <styled.div>
+      test
+    </styled.div>
+    <styled.div>
+      jest
+    </styled.div>
+  </styled.section>
+  <styled.section
+    key="lint"
+  >
+    <styled.div>
+      lint
+    </styled.div>
+    <styled.div>
+      eslint .
+    </styled.div>
+  </styled.section>
+</styled.div>
+`;

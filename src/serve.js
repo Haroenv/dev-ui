@@ -1,6 +1,5 @@
 const url = require('url');
 const fs = require('fs');
-const path = require('path');
 const { send } = require('micro');
 const mime = require('mime');
 

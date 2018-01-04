@@ -1,0 +1,16 @@
+language: node_js
+cache:
+  yarn: true
+  directories:
+    - node_modules
+notifications:
+  email: false
+node_js:
+  - '9'
+  - '8'
+  - '6'
+install:
+  - yarn
+script:
+  - yarn lint
+  - yarn test
