@@ -22,5 +22,5 @@ There's no UI yet, because I was a bit confused on how to add both this server a
 * [x] get installed dependencies (/dependencies)
 * [x] install dependency
 * [x] remove dependency
-* [ ] search for dependency (https://github.com/algolia/npm-search)
+* [x] search for dependency (https://github.com/algolia/npm-search)
 * [ ] UI
