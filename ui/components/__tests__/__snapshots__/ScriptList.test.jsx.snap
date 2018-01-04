@@ -6,6 +6,7 @@ exports[`<ScriptList /> with scripts 1`] = `
 <styled.div>
   <styled.section
     key="test"
+    onClick={[Function]}
   >
     <styled.h2>
       test
@@ -16,6 +17,7 @@ exports[`<ScriptList /> with scripts 1`] = `
   </styled.section>
   <styled.section
     key="lint"
+    onClick={[Function]}
   >
     <styled.h2>
       lint
