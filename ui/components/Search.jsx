@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   InstantSearch,
   SearchBox,
@@ -7,6 +8,12 @@ import {
 } from 'react-instantsearch/dom';
 
 const Hit = ({ hit: { name } }) => <div>{name}</div>;
+
+Hit.propTypes = {
+  hit: {
+    name: PropTypes.string,
+  },
+};
 
 const Search = () => (
   <InstantSearch
