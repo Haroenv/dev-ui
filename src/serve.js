@@ -1,6 +1,6 @@
 const url = require('url');
 const fs = require('fs');
-const {send} = require('micro');
+const { send } = require('micro');
 const mime = require('mime');
 
 // https://github.com/zeit/serve/issues/267

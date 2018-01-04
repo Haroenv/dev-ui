@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
-import {selectors} from '../ducks/scripts';
+import { selectors } from '../ducks/scripts';
 import ScriptList from './ScriptList';
 
-const Scripts = ({scripts}) => <ScriptList scripts={scripts} />;
+const Scripts = ({ scripts }) => <ScriptList scripts={scripts} />;
 
 Scripts.propTypes = {
   scripts: PropTypes.array.isRequired,

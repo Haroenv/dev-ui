@@ -15,9 +15,9 @@ const Command = styled.div`
   font-family: monospace;
 `;
 
-const ScriptList = ({scripts}) => (
+const ScriptList = ({ scripts }) => (
   <Container>
-    {scripts.map(({name, command}) => (
+    {scripts.map(({ name, command }) => (
       <Section key={name}>
         <Heading>{name}</Heading>
         <Command>{command}</Command>

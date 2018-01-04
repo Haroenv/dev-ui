@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 
 import ScriptList from '../ScriptList';
 import Section from '../Section';
@@ -12,8 +12,8 @@ describe('<ScriptList />', () => {
 
   test('with scripts', () => {
     const scripts = [
-      {name: 'test', command: 'jest'},
-      {name: 'lint', command: 'eslint .'},
+      { name: 'test', command: 'jest' },
+      { name: 'lint', command: 'eslint .' },
     ];
     const wrapper = shallow(<ScriptList scripts={scripts} />);
 
