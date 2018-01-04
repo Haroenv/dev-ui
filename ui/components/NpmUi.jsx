@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import Scripts from './Scripts';
+import Dependencies from './Dependencies';
 
 class NpmUi extends Component {
   render() {
@@ -10,8 +12,12 @@ class NpmUi extends Component {
           <Tab>Dependencies</Tab>
         </TabList>
 
-        <TabPanel>scripts</TabPanel>
-        <TabPanel>dependencies</TabPanel>
+        <TabPanel>
+          <Scripts />
+        </TabPanel>
+        <TabPanel>
+          <Dependencies />
+        </TabPanel>
       </Tabs>
     );
   }
