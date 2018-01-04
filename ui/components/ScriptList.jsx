@@ -6,7 +6,7 @@ import Section from './Section';
 
 const Container = styled.div``;
 
-const Heading = styled.div`
+const Heading = styled.h2`
   font-size: 1.5em;
 `;
 
