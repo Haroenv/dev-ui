@@ -40,7 +40,8 @@
     "open": "^0.0.5",
     "read-pkg-up": "^3.0.0",
     "strip-ansi": "^4.0.0",
-    "through2-map": "^3.0.0"
+    "through2-map": "^3.0.0",
+    "utf8-stream": "^0.0.0"
   },
   "devDependencies": {
     "ansi-html": "^0.0.7",
