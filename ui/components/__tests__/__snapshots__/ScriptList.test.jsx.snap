@@ -1,28 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ScriptList /> empty 1`] = `<div />`;
+exports[`<ScriptList /> empty 1`] = `<styled.div />`;
 
 exports[`<ScriptList /> with scripts 1`] = `
-<div>
-  <div
+<styled.div>
+  <styled.section
     key="test"
   >
-    <h2>
+    <styled.div>
       test
-    </h2>
-    <p>
+    </styled.div>
+    <styled.div>
       jest
-    </p>
-  </div>
-  <div
+    </styled.div>
+  </styled.section>
+  <styled.section
     key="lint"
   >
-    <h2>
+    <styled.div>
       lint
-    </h2>
-    <p>
+    </styled.div>
+    <styled.div>
       eslint .
-    </p>
-  </div>
-</div>
+    </styled.div>
+  </styled.section>
+</styled.div>
 `;
