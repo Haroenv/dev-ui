@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import Search from './Search';
 
 class Dependencies extends Component {
   render() {
-    return 'dependencies';
+    return (
+      <section>
+        <Search />
+      </section>
+    );
   }
 }
 

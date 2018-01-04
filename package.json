@@ -9,8 +9,7 @@
   "bin": "./bin/npm-ui.js",
   "scripts": {
     "start": "npm run build && ./bin/npm-ui.js",
-    "develop":
-      "concurrently \"micro-dev --ignore=dist\\|ui\" \"parcel watch index.html --public-url ./\"",
+    "develop": "concurrently \"micro-dev --ignore=dist\\|ui\" \"parcel watch index.html --public-url ./\"",
     "build": "parcel build index.html --public-url ./",
     "test": "jest",
     "lint": "eslint . --ext=js,jsx --ignore-path=.gitignore",
@@ -26,6 +25,7 @@
     "micro-cors": "^0.0.4",
     "mime": "^2.1.0",
     "open": "^0.0.5",
+    "react-instantsearch": "^4.4.0",
     "react-tabs": "^2.1.1",
     "read-pkg-up": "^3.0.0"
   },
