@@ -1,5 +1,11 @@
 #!/usr/bin/env node
 
-require('micro')(require('..')).listen(4938);
+const micro = require('micro');
+const getPort = require('get-port');
+const open = require('open');
+const app = require('..');
 
-require('open')('http://127.0.0.1:4938');
+getPort().then(port => {
+  micro(app).listen(port);
+  open(`http://127.0.0.1:${port}`);
+});
