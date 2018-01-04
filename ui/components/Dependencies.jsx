@@ -5,15 +5,19 @@ import { connect } from 'react-redux';
 import { selectors } from '../ducks/dependencies';
 import DependenciesList from './DependenciesList';
 import Search from './Search';
-
+import { Grid } from './styled';
 const Dependencies = ({ dependencies, devDependencies }) => (
-  <article>
-    <h1>Dependencies</h1>
-    <DependenciesList dependencies={dependencies} />
-    <h1>DevDependencies</h1>
-    <DependenciesList dependencies={devDependencies} />
-    <Search />
-  </article>
+  <Grid col="2">
+    <div>
+      <h1>Dependencies</h1>
+      <DependenciesList dependencies={dependencies} />
+      <h1>DevDependencies</h1>
+      <DependenciesList dependencies={devDependencies} />
+    </div>
+    <div>
+      <Search />
+    </div>
+  </Grid>
 );
 
 Dependencies.propTypes = {
