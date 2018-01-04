@@ -8,10 +8,10 @@ const Section = styled.section`
 
 const DependenciesList = ({ dependencies }) =>
   dependencies.map(({ name, version }) => (
-    <div key={name}>
+    <Section key={name}>
       <h2>{name}</h2>
       <code>{version}</code>
-    </div>
+    </Section>
   ));
 
 DependenciesList.propTypes = {
