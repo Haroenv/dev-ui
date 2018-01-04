@@ -1,3 +1,3 @@
-const { getDependencies } = require('../../src/packageUtils.js');
+const {getDependencies} = require('../../src/packageUtils.js');
 
 module.exports = () => getDependencies();

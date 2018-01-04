@@ -1,3 +1,3 @@
-const { getScripts } = require('../../src/packageUtils.js');
+const {getScripts} = require('../../src/packageUtils.js');
 
 module.exports = () => getScripts();

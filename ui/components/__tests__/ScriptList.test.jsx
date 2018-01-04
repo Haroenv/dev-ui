@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import {shallow} from 'enzyme';
 
 import ScriptList from '../ScriptList';
 
@@ -11,8 +11,8 @@ describe('<ScriptList />', () => {
 
   test('with scripts', () => {
     const scripts = [
-      { name: 'test', command: 'jest' },
-      { name: 'lint', command: 'eslint .' },
+      {name: 'test', command: 'jest'},
+      {name: 'lint', command: 'eslint .'},
     ];
     const list = shallow(<ScriptList scripts={scripts} />);
     expect(list).toMatchSnapshot();

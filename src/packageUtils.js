@@ -1,7 +1,7 @@
 const readPkgUp = require('read-pkg-up');
 
 async function extract(keys) {
-  const { pkg } = await readPkgUp();
+  const {pkg} = await readPkgUp();
 
   return keys.reduce((prev, p) => {
     if (Array.isArray(p)) {
