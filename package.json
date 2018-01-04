@@ -26,7 +26,8 @@
     "build": "parcel build index.html --public-url ./",
     "test": "jest",
     "lint": "eslint . --ext=js,jsx --ignore-path=.gitignore",
-    "yes": "yes hello world"
+    "yes": "yes hello world",
+    "rainbow": "./test/rainbow.sh"
   },
   "dependencies": {
     "ansi-html-stream": "^0.0.3",
