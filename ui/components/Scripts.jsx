@@ -4,8 +4,15 @@ import { connect } from 'react-redux';
 
 import { selectors } from '../ducks/scripts';
 import ScriptList from './ScriptList';
-
-const Scripts = ({ scripts }) => <ScriptList scripts={scripts} />;
+import { Grid } from './styled';
+const Scripts = ({ scripts }) => (
+  <Grid col="2">
+    <ScriptList scripts={scripts} />
+    <div>
+      <h3>Terminal output:</h3>
+    </div>
+  </Grid>
+);
 
 Scripts.propTypes = {
   scripts: PropTypes.array.isRequired,
