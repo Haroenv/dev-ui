@@ -10,10 +10,14 @@ import './index.css';
 import NpmUi from './components/NpmUi';
 import reducers from './ducks';
 import sagas from './sagas';
+import { compose } from 'redux';
 
 const sagaMiddleware = createSagaMiddleware();
-
-const store = createStore(reducers, applyMiddleware(sagaMiddleware));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(
+  reducers,
+  composeEnhancers(applyMiddleware(sagaMiddleware)),
+);
 
 sagaMiddleware.run(sagas);
 
