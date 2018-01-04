@@ -2,14 +2,12 @@ const initialState = {
   packageScripts: {},
 };
 
-export const types = {
-  FETCH_SCRIPTS: 'FETCH_SCRIPTS',
-  SET_SCRIPTS: 'SET_SCRIPTS',
-};
+export const FETCH_SCRIPTS = 'FETCH_SCRIPTS';
+export const SET_SCRIPTS = 'SET_SCRIPTS';
 
 export default (state = initialState, { type, ...payload }) => {
   switch (type) {
-    case types.SET_SCRIPTS:
+    case SET_SCRIPTS:
       return {
         ...state,
         packageScripts: payload.scripts,
@@ -20,8 +18,8 @@ export default (state = initialState, { type, ...payload }) => {
 };
 
 export const actions = {
-  fetchScripts: () => ({ type: types.FETCH_SCRIPTS }),
-  setScripts: scripts => ({ type: types.SET_SCRIPTS, scripts }),
+  fetchScripts: () => ({ type: FETCH_SCRIPTS }),
+  setScripts: scripts => ({ type: SET_SCRIPTS, scripts }),
 };
 
 export const selectors = {
