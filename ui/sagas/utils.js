@@ -4,7 +4,7 @@ export function* streamToDispatch(reader, actionCreator) {
   while (true) {
     const result = yield call([reader, reader.read]);
     if (result.done) break;
-    const text = String.fromCharCode(...result.value);
+    const text = String.fromCodePoint(...result.value);
     yield put(actionCreator(text));
   }
 }
