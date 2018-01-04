@@ -7,9 +7,9 @@ exports[`<ScriptList /> with scripts 1`] = `
   <styled.section
     key="test"
   >
-    <styled.div>
+    <styled.h2>
       test
-    </styled.div>
+    </styled.h2>
     <styled.div>
       jest
     </styled.div>
@@ -17,9 +17,9 @@ exports[`<ScriptList /> with scripts 1`] = `
   <styled.section
     key="lint"
   >
-    <styled.div>
+    <styled.h2>
       lint
-    </styled.div>
+    </styled.h2>
     <styled.div>
       eslint .
     </styled.div>
