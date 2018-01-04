@@ -5,7 +5,8 @@ const execa = require('execa');
 module.exports = async ({ params: { dependency }, on }, res) => {
   try {
     const command = hasYarn() ? 'yarn' : 'npm';
-    const { stdout, kill } = execa(command, ['remove', dependency]);
+    const argument = hasYarn() ? 'remove' : 'rm';
+    const { stdout, kill } = execa(command, [argument, dependency]);
     stdout.pipe(process.stdout);
     send(res, 200, stdout);
     on('close', kill);
