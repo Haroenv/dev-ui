@@ -21,12 +21,12 @@ const extract = keys => pkg =>
   }, {});
 
 module.exports = {
-  getScripts: () => readPkg().then(extract(['name', 'scripts'])),
-  getDependencies: () =>
-    readPkg().then(extract(['name', 'dependencies', 'devDependencies'])),
-  getComplete: () => readPkg(),
-  getMonoRepoDependencies: () =>
+  getPackage: () =>
+    readPkg().then(
+      extract(['name', 'scripts', 'dependencies', 'devDependencies']),
+    ),
+  getMonoRepoPackages: () =>
     getPackages(process.cwd())
       .map(pkg => pkg.package)
-      .map(extract(['name', 'dependencies', 'devDependencies'])),
+      .map(extract(['name', 'scripts', 'dependencies', 'devDependencies'])),
 };

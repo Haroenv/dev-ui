@@ -2,7 +2,6 @@ const initialState = {
   packages: {},
 };
 
-export const FETCH_DEPENDENCIES = 'FETCH_DEPENDENCIES';
 export const SET_DEPENDENCIES = 'SET_DEPENDENCIES';
 
 export default (state = initialState, { type, ...payload }) => {
@@ -10,16 +9,13 @@ export default (state = initialState, { type, ...payload }) => {
     case SET_DEPENDENCIES:
       return {
         ...state,
-        packages: payload.packages.reduce(
-          (packages, pkg) => ({
-            ...packages,
-            [pkg.name]: {
-              dependencies: arrayify(pkg.dependencies, 'version'),
-              devDependencies: arrayify(pkg.devDependencies, 'version'),
-            },
-          }),
-          {},
-        ),
+        packages: {
+          ...state.packages,
+          [payload.name]: {
+            dependencies: arrayify(payload.dependencies, 'version'),
+            devDependencies: arrayify(payload.devDependencies, 'version'),
+          },
+        },
       };
     default:
       return state;
@@ -34,8 +30,12 @@ function arrayify(object = {}, key) {
 }
 
 export const actions = {
-  fetchDependencies: () => ({ type: FETCH_DEPENDENCIES }),
-  setDependencies: packages => ({ type: SET_DEPENDENCIES, packages }),
+  setDependencies: ({ name, dependencies, devDependencies }) => ({
+    type: SET_DEPENDENCIES,
+    name,
+    dependencies,
+    devDependencies,
+  }),
 };
 
 export const selectors = {
