@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Grid, Cell } from 'styled-css-grid';
 
-import { selectors, actions } from '../ducks/scripts';
+import { selectors, actions } from '../ducks/dependencies';
 import { selectors as packageSelectors } from '../ducks/packages';
 import DependenciesList from './DependenciesList';
 import Search from './Search';
@@ -40,23 +40,21 @@ Dependencies.propTypes = {
 };
 
 export default connect(
-  state => (
-    {
-      dependencies: selectors.getDependencies(
-        state.dependencies,
-        packageSelectors.getSelectedPackageName(state.packages),
-      ),
-      devDependencies: selectors.getDevDependencies(
-        state.dependencies,
-        packageSelectors.getSelectedPackageName(state.packages),
-      ),
-    },
-    dispatch =>
-      bindActionCreators(
-        {
-          // onScriptClick: actions.removeDependency,
-        },
-        dispatch,
-      )
-  ),
+  state => ({
+    dependencies: selectors.getDependencies(
+      state.dependencies,
+      packageSelectors.getSelectedPackageName(state.packages),
+    ),
+    devDependencies: selectors.getDevDependencies(
+      state.dependencies,
+      packageSelectors.getSelectedPackageName(state.packages),
+    ),
+  }),
+  dispatch =>
+    bindActionCreators(
+      {
+        onDependencyClick: () => undefined, // actions.removeDependency,
+      },
+      dispatch,
+    ),
 )(Dependencies);
