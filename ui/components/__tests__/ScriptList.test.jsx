@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import ScriptList from '../ScriptList';
-import Section from '../Section';
+import ListItem from '../ListItem';
 
 describe('<ScriptList />', () => {
   test('empty', () => {
@@ -17,9 +17,6 @@ describe('<ScriptList />', () => {
     ];
     const wrapper = shallow(<ScriptList scripts={scripts} />);
 
-    expect(wrapper.find(Section)).toHaveLength(2);
-    expect(wrapper.find(Section).first()).toHaveStyleRule('margin', '0.5em');
-
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(ListItem)).toHaveLength(2);
   });
 });
