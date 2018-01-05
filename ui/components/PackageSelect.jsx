@@ -16,18 +16,19 @@ const PackageSelect = ({
   selectedPackageName,
   packageNames,
   onSelectPackage,
-}) => (
-  <StyledSelect
-    className={className}
-    clearable={false}
-    value={selectedPackageName}
-    onChange={selectedOption => onSelectPackage(selectedOption.value)}
-    options={packageNames.map(name => ({
-      value: name,
-      label: name || '<anonymous>',
-    }))}
-  />
-);
+}) =>
+  packageNames.length > 1 && (
+    <StyledSelect
+      className={className}
+      clearable={false}
+      value={selectedPackageName}
+      onChange={selectedOption => onSelectPackage(selectedOption.value)}
+      options={packageNames.map(name => ({
+        value: name,
+        label: name || '<anonymous>',
+      }))}
+    />
+  );
 
 PackageSelect.propTypes = {
   className: PropTypes.string,
