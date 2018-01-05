@@ -4,27 +4,29 @@ exports[`<ScriptList /> empty 1`] = `<styled.div />`;
 
 exports[`<ScriptList /> with scripts 1`] = `
 <styled.div>
-  <styled.section
+  <ListItem
+    buttons={
+      <button
+        onClick={[Function]}
+      >
+        run
+      </button>
+    }
     key="test"
-    onClick={[Function]}
-  >
-    <styled.h2>
-      test
-    </styled.h2>
-    <styled.div>
-      jest
-    </styled.div>
-  </styled.section>
-  <styled.section
+    subtitle="jest"
+    title="test"
+  />
+  <ListItem
+    buttons={
+      <button
+        onClick={[Function]}
+      >
+        run
+      </button>
+    }
     key="lint"
-    onClick={[Function]}
-  >
-    <styled.h2>
-      lint
-    </styled.h2>
-    <styled.div>
-      eslint .
-    </styled.div>
-  </styled.section>
+    subtitle="eslint ."
+    title="lint"
+  />
 </styled.div>
 `;

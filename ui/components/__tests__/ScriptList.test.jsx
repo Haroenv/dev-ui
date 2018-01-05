@@ -18,5 +18,6 @@ describe('<ScriptList />', () => {
     const wrapper = shallow(<ScriptList scripts={scripts} />);
 
     expect(wrapper.find(ListItem)).toHaveLength(2);
+    expect(wrapper).toMatchSnapshot();
   });
 });
