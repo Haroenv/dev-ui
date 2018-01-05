@@ -41,7 +41,7 @@ export const actions = {
     dependencies,
     devDependencies,
   }),
-  removeDependency: ({ name }) => ({
+  removeDependency: name => ({
     type: REMOVE_DEP,
     name,
   }),
