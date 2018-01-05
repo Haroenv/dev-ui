@@ -15,7 +15,7 @@ const Command = styled.div`
   font-family: monospace;
 `;
 
-const ScriptList = ({ scripts, onScriptClick = () => {} }) => (
+const ScriptList = ({ scripts = [], onScriptClick = () => {} }) => (
   <Container>
     {scripts.map(({ name, command }) => (
       <Section key={name} onClick={() => onScriptClick(name)}>

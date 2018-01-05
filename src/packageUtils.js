@@ -21,7 +21,7 @@ const extract = keys => pkg =>
   }, {});
 
 module.exports = {
-  getScripts: () => readPkg().then(extract(['scripts'])),
+  getScripts: () => readPkg().then(extract(['name', 'scripts'])),
   getDependencies: () =>
     readPkg().then(extract(['name', 'dependencies', 'devDependencies'])),
   getComplete: () => readPkg(),

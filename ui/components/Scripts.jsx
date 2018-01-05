@@ -5,6 +5,8 @@ import { bindActionCreators } from 'redux';
 import { Grid, Cell } from 'styled-css-grid';
 
 import { selectors, actions } from '../ducks/scripts';
+import { selectors as packageSelectors } from '../ducks/packages';
+
 import ScriptList from './ScriptList';
 import { Wrapper, Log } from './styled';
 
@@ -30,7 +32,10 @@ Scripts.propTypes = {
 
 export default connect(
   state => ({
-    scripts: selectors.getScripts(state.scripts),
+    scripts: selectors.getScripts(
+      state.scripts,
+      packageSelectors.getSelectedPackageName(state.packages),
+    ),
     log: selectors.getLog(state.scripts),
   }),
   dispatch =>
