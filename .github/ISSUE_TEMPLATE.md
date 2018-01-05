@@ -1,6 +1,7 @@
 ## Bug or a feature
 
 <!-- remove what is not applying to you -->
+
 bug
 feature
 
@@ -11,5 +12,6 @@ feature
 ## I like this issue so I will
 
 <!-- remove what is not applying to you -->
-- [x] contribute with a PR
-- [ ] contribute with this issue
+
+* [x] contribute with a PR
+* [ ] contribute with this issue
