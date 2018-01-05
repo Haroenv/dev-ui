@@ -22,7 +22,7 @@
   "private": true,
   "scripts": {
     "start": "npm run build && ./bin/npm-ui.js",
-    "develop": "concurrently \"micro-dev --ignore=dist\\|ui\" \"parcel watch index.html --public-url ./\"",
+    "develop": "concurrently \"micro-dev --ignore=/dist\\|/ui\" \"parcel watch index.html --public-url ./\"",
     "build": "parcel build index.html --public-url ./",
     "test": "jest",
     "lint": "eslint . --ext=js,jsx --ignore-path=.gitignore",
@@ -33,6 +33,7 @@
     "ansi-html-stream": "^0.0.3",
     "execa": "^0.8.0",
     "fs-router": "^0.4.0",
+    "get-monorepo-packages": "^1.0.0",
     "get-port": "^3.2.0",
     "has-yarn": "^1.0.0",
     "merge-stream": "^1.0.1",

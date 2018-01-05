@@ -1,3 +1,12 @@
-const { getDependencies } = require('../../src/packageUtils.js');
+const {
+  getDependencies,
+  getMonoRepoDependencies,
+} = require('../../src/packageUtils.js');
 
-module.exports = () => getDependencies();
+module.exports = async () => {
+  const [dependencies, monorepo] = await Promise.all([
+    getDependencies(),
+    getMonoRepoDependencies(),
+  ]);
+  return { root: dependencies, monorepo };
+};
