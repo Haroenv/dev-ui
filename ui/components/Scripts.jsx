@@ -6,11 +6,12 @@ import { Grid, Cell } from 'styled-css-grid';
 
 import { selectors, actions } from '../ducks/scripts';
 import ScriptList from './ScriptList';
+import { Wrapper, Log } from './styled';
 
-const Scripts = ({ scripts }) => (
+const Scripts = ({ scripts, log, onScriptClick }) => (
   <Grid columns={2}>
     <Cell>
-      <ScriptList scripts={scripts} />
+      <ScriptList scripts={scripts} onScriptClick={onScriptClick} />
     </Cell>
     <Cell>
       <Wrapper>
