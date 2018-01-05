@@ -22,9 +22,9 @@ export class ListItem extends React.Component {
   }
 }
 ListItem.propTypes = {
-  title: PropTypes.element,
-  subtitle: PropTypes.element,
-  buttons: PropTypes.element,
+  title: PropTypes.node,
+  subtitle: PropTypes.node,
+  buttons: PropTypes.node,
 };
 
 export const List = styled.ul`
