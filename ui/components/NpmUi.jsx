@@ -1,24 +1,28 @@
 import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import Scripts from './Scripts';
-import Packages from './Packages';
+import Dependencies from './Dependencies';
+import PackageSelect from './PackageSelect';
 
 class NpmUi extends Component {
   render() {
     return (
-      <Tabs>
-        <TabList>
-          <Tab>Scripts</Tab>
-          <Tab>Dependencies</Tab>
-        </TabList>
+      <div>
+        <PackageSelect />
+        <Tabs>
+          <TabList>
+            <Tab>Scripts</Tab>
+            <Tab>Dependencies</Tab>
+          </TabList>
 
-        <TabPanel>
-          <Scripts />
-        </TabPanel>
-        <TabPanel>
-          <Packages />
-        </TabPanel>
-      </Tabs>
+          <TabPanel>
+            <Scripts />
+          </TabPanel>
+          <TabPanel>
+            <Dependencies />
+          </TabPanel>
+        </Tabs>
+      </div>
     );
   }
 }

@@ -1,5 +1,5 @@
 const initialState = {
-  packageScripts: {},
+  packages: {},
   runningScriptName: null,
   runningScriptLog: '',
 };
@@ -14,7 +14,10 @@ export default (state = initialState, { type, ...payload }) => {
     case SET_SCRIPTS:
       return {
         ...state,
-        packageScripts: payload.scripts,
+        packages: {
+          ...state.packages,
+          [payload.packageName]: payload.scripts,
+        },
       };
     case RUN_SCRIPT:
       return {
@@ -34,16 +37,22 @@ export default (state = initialState, { type, ...payload }) => {
 
 export const actions = {
   fetchScripts: () => ({ type: FETCH_SCRIPTS }),
-  setScripts: scripts => ({ type: SET_SCRIPTS, scripts }),
+  setScripts: ({ scripts, packageName }) => ({
+    type: SET_SCRIPTS,
+    packageName,
+    scripts,
+  }),
   runScript: name => ({ type: RUN_SCRIPT, name }),
   scriptLogAppend: text => ({ type: SCRIPT_LOG_APPEND, text }),
 };
 
 export const selectors = {
-  getScripts: state =>
-    Object.keys(state.packageScripts).map(name => ({
-      name,
-      command: state.packageScripts[name],
-    })),
+  getScripts: (state, packageName) =>
+    state.packages[packageName]
+      ? Object.keys(state.packages[packageName]).map(scriptName => ({
+          name: scriptName,
+          command: state.packages[packageName][scriptName],
+        }))
+      : [],
   getLog: state => state.runningScriptLog,
 };
