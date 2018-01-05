@@ -4,7 +4,7 @@ import Scripts from './Scripts';
 import Dependencies from './Dependencies';
 import PackageSelect from './PackageSelect';
 
-class NpmUi extends Component {
+class DevUi extends Component {
   render() {
     return (
       <div>
@@ -27,4 +27,4 @@ class NpmUi extends Component {
   }
 }
 
-export default NpmUi;
+export default DevUi;
