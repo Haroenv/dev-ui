@@ -1,23 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
-const Section = styled.section`
-  padding: 5px;
-  & h2,
-  & code {
-    margin: 0;
-    margin-bottom: 10px;
-  }
-`;
+import { List, ListItem } from './List';
 
-const DependenciesList = ({ dependencies }) =>
-  dependencies.map(({ name, version }) => (
-    <Section key={name}>
-      <h2>{name}</h2>
-      <code>{version}</code>
-    </Section>
-  ));
+const DependenciesList = ({ dependencies }) => (
+  <List>
+    {dependencies.map(({ name, version }) => (
+      <ListItem
+        title={name}
+        subtitle={version}
+        buttons={<button>remove</button>}
+        key={name}
+      />
+    ))}
+  </List>
+);
 
 DependenciesList.propTypes = {
   dependencies: PropTypes.arrayOf(
