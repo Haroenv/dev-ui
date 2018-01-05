@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import Scripts from './Scripts';
-import Dependencies from './Dependencies';
+import Packages from './Packages';
 
 class NpmUi extends Component {
   render() {
@@ -16,7 +16,7 @@ class NpmUi extends Component {
           <Scripts />
         </TabPanel>
         <TabPanel>
-          <Dependencies />
+          <Packages />
         </TabPanel>
       </Tabs>
     );

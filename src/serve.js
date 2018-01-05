@@ -5,7 +5,7 @@ const mime = require('mime');
 
 // https://github.com/zeit/serve/issues/267
 
-module.exports = (prefix = './') => async (req, res) => {
+module.exports = (prefix = __dirname) => async (req, res) => {
   const parseUrl = url.parse(req.url);
   let file = `${prefix}${parseUrl.pathname}`;
 

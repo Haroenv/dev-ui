@@ -2,18 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Grid, Cell } from 'styled-css-grid';
 
 import { selectors, actions } from '../ducks/scripts';
 import ScriptList from './ScriptList';
-import { Grid, Log, Wrapper } from './styled';
+import { Wrapper, Log } from './styled';
 
 const Scripts = ({ scripts, log, onScriptClick }) => (
-  <Grid col="2">
-    <ScriptList scripts={scripts} onScriptClick={onScriptClick} />
-    <Wrapper>
-      <h3>Terminal output:</h3>
-      <Log dangerouslySetInnerHTML={{ __html: log }} />
-    </Wrapper>
+  <Grid columns={2}>
+    <Cell>
+      <ScriptList scripts={scripts} onScriptClick={onScriptClick} />
+    </Cell>
+    <Cell>
+      <Wrapper>
+        <h3>Terminal output:</h3>
+        <Log dangerouslySetInnerHTML={{ __html: log }} />
+      </Wrapper>
+    </Cell>
   </Grid>
 );
 

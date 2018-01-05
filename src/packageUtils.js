@@ -1,9 +1,13 @@
 const readPkgUp = require('read-pkg-up');
+const getPackages = require('get-monorepo-packages');
 
-async function extract(keys) {
+async function readPkg() {
   const { pkg } = await readPkgUp();
+  return pkg;
+}
 
-  return keys.reduce((prev, p) => {
+const extract = keys => pkg =>
+  keys.reduce((prev, p) => {
     if (Array.isArray(p)) {
       prev[p[0]] = extract(pkg[p[0]], p[1]);
     } else if (
@@ -15,10 +19,14 @@ async function extract(keys) {
     }
     return prev;
   }, {});
-}
 
 module.exports = {
-  getScripts: () => extract(['scripts']),
-  getDependencies: () => extract(['dependencies', 'devDependencies']),
-  getComplete: () => readPkgUp().then(p => p.pkg),
+  getScripts: () => readPkg().then(extract(['scripts'])),
+  getDependencies: () =>
+    readPkg().then(extract(['name', 'dependencies', 'devDependencies'])),
+  getComplete: () => readPkg(),
+  getMonoRepoDependencies: () =>
+    getPackages(process.cwd())
+      .map(pkg => pkg.package)
+      .map(extract(['name', 'dependencies', 'devDependencies'])),
 };
