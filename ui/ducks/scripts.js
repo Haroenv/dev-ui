@@ -15,6 +15,7 @@ export default (state = initialState, { type, ...payload }) => {
       return {
         ...state,
         packages: {
+          ...state.packages,
           [payload.packageName]: payload.scripts,
         },
       };
@@ -36,7 +37,7 @@ export default (state = initialState, { type, ...payload }) => {
 
 export const actions = {
   fetchScripts: () => ({ type: FETCH_SCRIPTS }),
-  setScripts: (scripts, packageName) => ({
+  setScripts: ({ scripts, packageName }) => ({
     type: SET_SCRIPTS,
     packageName,
     scripts,

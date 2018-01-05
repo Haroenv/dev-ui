@@ -6,7 +6,7 @@ import { streamToDispatch } from './utils';
 
 export function* fetchScripts() {
   const { scripts, name } = yield call(getJson, '/scripts');
-  yield put(actions.setScripts(scripts, name));
+  yield put(actions.setScripts({ scripts, packageName: name }));
 }
 
 export function* runScript({ name }) {
