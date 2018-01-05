@@ -4,8 +4,16 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
+import { injectGlobal } from 'styled-components';
 
-import './index.css';
+import 'react-tabs/style/react-tabs.css';
+import 'react-select/dist/react-select.css';
+
+injectGlobal`
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+`;
 
 import DevUi from './components/DevUi';
 import reducers from './ducks';
