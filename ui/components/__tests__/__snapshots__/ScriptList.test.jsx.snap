@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ScriptList /> empty 1`] = `<styled.div />`;
+exports[`<ScriptList /> empty 1`] = `<styled.ul />`;
 
 exports[`<ScriptList /> with scripts 1`] = `
-<styled.div>
+<styled.ul>
   <ListItem
     buttons={
       <button
@@ -28,5 +28,5 @@ exports[`<ScriptList /> with scripts 1`] = `
     subtitle="eslint ."
     title="lint"
   />
-</styled.div>
+</styled.ul>
 `;

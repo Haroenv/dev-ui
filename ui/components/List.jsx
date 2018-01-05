@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import React from 'react';
 import PropTypes from 'prop-types';
-const ListItemContainer = styled.div`
+const ListItemContainer = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: inset 0px -1px 0px 0px rgba(0, 0, 0, 0.2);
 `;
 
-class ListItem extends React.Component {
+export class ListItem extends React.Component {
   render() {
     return (
       <ListItemContainer>
@@ -26,4 +26,8 @@ ListItem.propTypes = {
   subtitle: PropTypes.string,
   buttons: PropTypes.element,
 };
-export default ListItem;
+
+export const List = styled.ul`
+  list-style-type: none;
+  padding: 0;
+`;

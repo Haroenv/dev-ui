@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import ScriptList from '../ScriptList';
-import ListItem from '../ListItem';
+import { ListItem } from '../List';
 
 describe('<ScriptList />', () => {
   test('empty', () => {

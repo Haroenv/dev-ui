@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
-import ListItem from './ListItem';
-const Container = styled.div``;
+import { List, ListItem } from './List';
 
 const ScriptList = ({ scripts = [], onScriptClick = () => {} }) => (
-  <Container>
+  <List>
     {scripts.map(({ name, command }) => (
       <ListItem
         title={name}
@@ -15,7 +13,7 @@ const ScriptList = ({ scripts = [], onScriptClick = () => {} }) => (
         buttons={<button onClick={() => onScriptClick(name)}>run</button>}
       />
     ))}
-  </Container>
+  </List>
 );
 
 ScriptList.propTypes = {
