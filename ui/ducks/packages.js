@@ -17,9 +17,9 @@ export default (state = initialState, { type, ...payload }) => {
     case SET_PACKAGES:
       return {
         ...state,
-        selectedPackage: payload.root.name,
-        root: payload.root.name,
-        monorepo: payload.monorepo.map(pkg => pkg.name),
+        selectedPackage: payload.root,
+        root: payload.root,
+        monorepo: payload.monorepo,
       };
     default:
       return state;

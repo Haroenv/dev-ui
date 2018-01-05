@@ -4,7 +4,6 @@ const initialState = {
   runningScriptLog: '',
 };
 
-export const FETCH_SCRIPTS = 'FETCH_SCRIPTS';
 export const SET_SCRIPTS = 'SET_SCRIPTS';
 export const RUN_SCRIPT = 'RUN_SCRIPT';
 export const SCRIPT_LOG_APPEND = 'SCRIPT_LOG_APPEND';
@@ -36,7 +35,6 @@ export default (state = initialState, { type, ...payload }) => {
 };
 
 export const actions = {
-  fetchScripts: () => ({ type: FETCH_SCRIPTS }),
   setScripts: ({ scripts, packageName }) => ({
     type: SET_SCRIPTS,
     packageName,
