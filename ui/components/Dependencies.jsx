@@ -53,7 +53,7 @@ export default connect(
   dispatch =>
     bindActionCreators(
       {
-        onDependencyClick: () => undefined, // actions.removeDependency,
+        onDependencyClick: () => {}, // actions.removeDependency,
       },
       dispatch,
     ),
