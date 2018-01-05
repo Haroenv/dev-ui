@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "dev-ui",
   "version": "0.0.0",
   "description": "A ui for npm and yarn",
   "main": "index.js",
@@ -10,7 +10,7 @@
       "url": "https://twitter.com/lucasazzola"
     }
   ],
-  "bin": "./bin/npm-ui.js",
+  "bin": "./bin/dev-ui.js",
   "files": [
     "index.js",
     "bin",
@@ -21,7 +21,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "npm run build && ./bin/npm-ui.js",
+    "start": "npm run build && ./bin/dev-ui.js",
     "develop": "concurrently \"micro-dev --ignore=/dist\\|/ui\" \"parcel watch index.html --public-url ./\"",
     "build": "parcel build index.html --public-url ./",
     "test": "jest",

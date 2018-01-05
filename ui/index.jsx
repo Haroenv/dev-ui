@@ -15,7 +15,7 @@ body {
 }
 `;
 
-import NpmUi from './components/NpmUi';
+import DevUi from './components/DevUi';
 import reducers from './ducks';
 import sagas from './sagas';
 import { compose } from 'redux';
@@ -31,7 +31,7 @@ sagaMiddleware.run(sagas);
 
 ReactDOM.render(
   <Provider store={store}>
-    <NpmUi />
+    <DevUi />
   </Provider>,
-  document.querySelector('.npm-ui'),
+  document.querySelector('.dev-ui'),
 );
