@@ -1,0 +1,71 @@
+{
+  "projectName": "npm-ui",
+  "projectOwner": "Haroenv",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "threepointone",
+      "name": "Sunil Pai",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/18808?v=4",
+      "profile": "https://github.com/threepointone",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "Haroenv",
+      "name": "Haroen Viaene",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/6270048?v=4",
+      "profile": "https://haroen.me",
+      "contributions": [
+        "code",
+        "bug",
+        "infra",
+        "ideas",
+        "review",
+        "test"
+      ]
+    },
+    {
+      "login": "azz",
+      "name": "Lucas Azzola",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1297597?v=4",
+      "profile": "https://twitter.com/lucasazzola",
+      "contributions": [
+        "code",
+        "bug",
+        "infra",
+        "ideas",
+        "review",
+        "test",
+        "tool"
+      ]
+    },
+    {
+      "login": "ranfdev",
+      "name": "ranfdev",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/23294184?v=4",
+      "profile": "https://github.com/ranfdev",
+      "contributions": [
+        "code",
+        "design",
+        "ideas"
+      ]
+    },
+    {
+      "login": "Raathigesh",
+      "name": "Raathigeshan Kugarajan",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3108160?v=4",
+      "profile": "https://twitter.com/Raathigesh",
+      "contributions": [
+        "ideas",
+        "platform",
+        "code"
+      ]
+    }
+  ]
+}
