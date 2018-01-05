@@ -22,8 +22,8 @@ export class ListItem extends React.Component {
   }
 }
 ListItem.propTypes = {
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
+  title: PropTypes.element,
+  subtitle: PropTypes.element,
   buttons: PropTypes.element,
 };
 
