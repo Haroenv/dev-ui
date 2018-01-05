@@ -23,7 +23,7 @@ const extract = keys => pkg =>
 module.exports = {
   getScripts: () => readPkg().then(extract(['scripts'])),
   getDependencies: () =>
-    readPkg().then(extract(['dependencies', 'devDependencies'])),
+    readPkg().then(extract(['name', 'dependencies', 'devDependencies'])),
   getComplete: () => readPkg(),
   getMonoRepoDependencies: () =>
     getPackages(process.cwd())

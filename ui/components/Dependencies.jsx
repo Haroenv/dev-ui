@@ -6,6 +6,7 @@ import { selectors } from '../ducks/dependencies';
 import DependenciesList from './DependenciesList';
 import Search from './Search';
 import { Grid } from './styled';
+
 const Dependencies = ({ dependencies, devDependencies }) => (
   <Grid col="2">
     <div>
@@ -23,9 +24,16 @@ const Dependencies = ({ dependencies, devDependencies }) => (
 Dependencies.propTypes = {
   dependencies: PropTypes.array.isRequired,
   devDependencies: PropTypes.array.isRequired,
+  packageName: PropTypes.string.isRequired,
 };
 
-export default connect(state => ({
-  dependencies: selectors.getDependencies(state.dependencies),
-  devDependencies: selectors.getDevDependencies(state.dependencies),
+export default connect((state, ownProps) => ({
+  dependencies: selectors.getDependencies(
+    state.dependencies,
+    ownProps.packageName,
+  ),
+  devDependencies: selectors.getDevDependencies(
+    state.dependencies,
+    ownProps.packageName,
+  ),
 }))(Dependencies);

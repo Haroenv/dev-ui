@@ -1,7 +1,6 @@
 const cors = require('micro-cors')();
-
-let serveStatic = require('./src/serve')('./dist');
-let match = require('fs-router')(__dirname + '/routes');
+const serveStatic = require('./src/serve')(__dirname + '/dist');
+const match = require('fs-router')(__dirname + '/routes');
 
 module.exports = cors(async function(req, res) {
   let matched = match(req);
