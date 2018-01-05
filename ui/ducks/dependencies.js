@@ -11,16 +11,10 @@ export default (state = initialState, { type, ...payload }) => {
         ...state,
         packages: {
           ...state.packages,
-          ...payload.packages.reduce(
-            (packages, pkg) => ({
-              ...packages,
-              [pkg.name]: {
-                dependencies: arrayify(pkg.dependencies, 'version'),
-                devDependencies: arrayify(pkg.devDependencies, 'version'),
-              },
-            }),
-            {},
-          ),
+          [payload.name]: {
+            dependencies: arrayify(payload.dependencies, 'version'),
+            devDependencies: arrayify(payload.devDependencies, 'version'),
+          },
         },
       };
     default:
@@ -36,7 +30,12 @@ function arrayify(object = {}, key) {
 }
 
 export const actions = {
-  setDependencies: packages => ({ type: SET_DEPENDENCIES, packages }),
+  setDependencies: ({ name, dependencies, devDependencies }) => ({
+    type: SET_DEPENDENCIES,
+    name,
+    dependencies,
+    devDependencies,
+  }),
 };
 
 export const selectors = {

@@ -8,22 +8,12 @@ import { getJson } from '../api';
 export function* fetchRootPackage() {
   const { root, monorepo } = yield call(getJson, '/packages');
   yield put(packagesActions.setPackages({ root: root.name, monorepo }));
-  yield put(dependenciesActions.setDependencies([root]));
-  yield put(
-    scriptsActions.setScripts({
-      packageName: root.name,
-      scripts: root.scripts,
-    }),
-  );
+  yield put(dependenciesActions.setDependencies(root));
+  yield put(scriptsActions.setScripts(root));
 }
 
 export function* fetchMonoRepoPackage({ name }) {
   const pkg = yield call(getJson, `/packages/monorepo/${name}`);
-  yield put(dependenciesActions.setDependencies([pkg]));
-  yield put(
-    scriptsActions.setScripts({
-      packageName: pkg.name,
-      scripts: pkg.scripts,
-    }),
-  );
+  yield put(dependenciesActions.setDependencies(pkg));
+  yield put(scriptsActions.setScripts(pkg));
 }

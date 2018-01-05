@@ -15,7 +15,7 @@ export default (state = initialState, { type, ...payload }) => {
         ...state,
         packages: {
           ...state.packages,
-          [payload.packageName]: payload.scripts,
+          [payload.name]: payload.scripts,
         },
       };
     case RUN_SCRIPT:
@@ -35,9 +35,9 @@ export default (state = initialState, { type, ...payload }) => {
 };
 
 export const actions = {
-  setScripts: ({ scripts, packageName }) => ({
+  setScripts: ({ scripts, name }) => ({
     type: SET_SCRIPTS,
-    packageName,
+    name,
     scripts,
   }),
   runScript: name => ({ type: RUN_SCRIPT, name }),
