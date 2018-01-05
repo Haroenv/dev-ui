@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Grid, Cell } from 'styled-css-grid';
 
-import { selectors /*, actions*/ } from '../ducks/dependencies';
+import { selectors, actions } from '../ducks/dependencies';
 import { selectors as packageSelectors } from '../ducks/packages';
 import DependenciesList from './DependenciesList';
 import Search from './Search';
