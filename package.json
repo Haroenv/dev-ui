@@ -38,6 +38,7 @@
     "get-monorepo-packages": "^1.0.1",
     "get-port": "^3.2.0",
     "has-yarn": "^1.0.0",
+    "lodash": "^4.17.4",
     "merge-stream": "^1.0.1",
     "micro": "^9.0.2",
     "micro-cors": "^0.0.4",

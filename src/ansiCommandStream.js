@@ -2,7 +2,7 @@ const hasYarn = require('has-yarn');
 const execa = require('execa');
 const merge = require('merge-stream');
 const ansi = require('ansi-html-stream');
-
+const _ = require('lodash');
 const theme = {
   resets: {
     '0': false,
@@ -38,19 +38,22 @@ const theme = {
 };
 
 // use this function to adjust arguments to yarn or npm
-const adjustArguments = arg => {
+const adjustArgument = arg => {
   switch (arg) {
     case 'remove':
       return 'uninstall';
     case 'add':
-      return 'i';
+      return ['install', '--save'];
   }
 };
 
 module.exports = function ansiCommandStream({ args }) {
   const command = hasYarn() ? 'yarn' : 'npm';
   // adjust arguments only if needed (only if it hasn't yarn)
-  const adjustedArguments = hasYarn() ? args : args.map(adjustArguments);
+  const adjustedArguments = hasYarn()
+    ? args
+    : _.flatten(args.map(adjustArgument));
+
   const { stdout, stderr, kill } = execa(command, [
     // '--color="always"',
     ...adjustedArguments,
