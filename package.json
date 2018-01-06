@@ -21,8 +21,10 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "npm run build && ./bin/dev-ui.js",
-    "develop": "concurrently \"micro-dev --ignore=/dist\\|/ui\" \"parcel watch index.html --public-url ./\"",
+    "start": "yarn build && ./bin/dev-ui.js",
+    "develop": "concurrently \"yarn develop:server\" \"yarn develop:ui\"",
+    "develop:server": "micro-dev --ignore=\"/dist|/ui\"",
+    "develop:ui": "parcel watch index.html --public-url ./",
     "build": "parcel build index.html --public-url ./",
     "test": "jest",
     "lint": "eslint . --ext=js,jsx --ignore-path=.gitignore",
