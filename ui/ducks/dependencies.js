@@ -3,7 +3,7 @@ const initialState = {
 };
 
 export const SET_DEPENDENCIES = 'SET_DEPENDENCIES';
-
+export const REMOVE_DEPENDENCY = 'REMOVE_DEPENDENCY';
 export default (state = initialState, { type, ...payload }) => {
   switch (type) {
     case SET_DEPENDENCIES:
@@ -16,6 +16,11 @@ export default (state = initialState, { type, ...payload }) => {
             devDependencies: arrayify(payload.devDependencies, 'version'),
           },
         },
+      };
+    case REMOVE_DEPENDENCY:
+      return {
+        ...state,
+        removingDependency: payload.name,
       };
     default:
       return state;
@@ -35,6 +40,10 @@ export const actions = {
     name,
     dependencies,
     devDependencies,
+  }),
+  removeDependency: name => ({
+    type: REMOVE_DEPENDENCY,
+    name,
   }),
 };
 
