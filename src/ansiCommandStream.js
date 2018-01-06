@@ -37,11 +37,23 @@ const theme = {
   },
 };
 
+// use this function to adjust arguments to yarn or npm
+const adjustArguments = arg => {
+  switch (arg) {
+    case 'remove':
+      return 'uninstall';
+    case 'add':
+      return 'i';
+  }
+};
+
 module.exports = function ansiCommandStream({ args }) {
   const command = hasYarn() ? 'yarn' : 'npm';
+  // adjust arguments only if needed (only if it hasn't yarn)
+  const adjustedArguments = hasYarn() ? args : args.map(adjustArguments);
   const { stdout, stderr, kill } = execa(command, [
     // '--color="always"',
-    ...args,
+    ...adjustedArguments,
   ]);
   const stream = merge(stdout, stderr).pipe(ansi({ chunked: true, theme }));
   return { stream, kill };
