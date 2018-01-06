@@ -9,16 +9,14 @@ import {
 import { connectHits } from 'react-instantsearch/connectors';
 import { List, ListItem } from './List';
 
-const Hits = ({ hits = [], onDependencyClick = () => {} }) => (
+const Hits = ({ hits = [], onAddClick = () => {} }) => (
   <List>
     {hits.map(hit => (
       <ListItem
         key={hit.name}
         title={<Highlight attributeName="name" hit={hit} tagName="mark" />}
         subtitle={'version'}
-        buttons={
-          <button onClick={() => onDependencyClick(hit.name)}>add</button>
-        }
+        buttons={<button onClick={() => onAddClick(hit.name)}>add</button>}
       />
     ))}
   </List>
@@ -31,12 +29,12 @@ Hits.propTypes = {
       versions: PropTypes.objectOf(PropTypes.string),
     }),
   ),
-  onDependencyClick: PropTypes.func,
+  onAddClick: PropTypes.func,
 };
 
 const ConnectedHits = connectHits(Hits);
 
-const Search = () => (
+const Search = ({ onAddClick }) => (
   <InstantSearch
     appId="OFCNCOG2CU"
     apiKey="f54e21fa3a2a0160595bb058179bfb1e"
@@ -48,8 +46,12 @@ const Search = () => (
       hitsPerPage={20}
     />
     <SearchBox />
-    <ConnectedHits />
+    <ConnectedHits onAddClick={onAddClick} />
   </InstantSearch>
 );
+
+Search.propTypes = {
+  onAddClick: PropTypes.func,
+};
 
 export default Search;
