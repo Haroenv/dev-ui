@@ -4,6 +4,8 @@ const initialState = {
 
 export const SET_DEPENDENCIES = 'SET_DEPENDENCIES';
 export const REMOVE_DEPENDENCY = 'REMOVE_DEPENDENCY';
+export const ADD_DEPENDENCY = 'ADD_DEPENDENCY';
+
 export default (state = initialState, { type, ...payload }) => {
   switch (type) {
     case SET_DEPENDENCIES:
@@ -21,6 +23,13 @@ export default (state = initialState, { type, ...payload }) => {
       return {
         ...state,
         removingDependency: payload.name,
+        runningScriptLog: '',
+      };
+    case ADD_DEPENDENCY:
+      return {
+        ...state,
+        addingDependency: payload.name,
+        runningScriptLog: '',
       };
     default:
       return state;
@@ -43,6 +52,10 @@ export const actions = {
   }),
   removeDependency: name => ({
     type: REMOVE_DEPENDENCY,
+    name,
+  }),
+  addDependency: name => ({
+    type: ADD_DEPENDENCY,
     name,
   }),
 };

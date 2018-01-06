@@ -13,6 +13,7 @@ const Dependencies = ({
   dependencies = [],
   devDependencies = [],
   onDependencyClick,
+  onAddClick,
 }) => (
   <Grid columns={2}>
     <Cell>
@@ -28,7 +29,7 @@ const Dependencies = ({
       />
     </Cell>
     <Cell>
-      <Search />
+      <Search onAddClick={onAddClick} />
     </Cell>
   </Grid>
 );
@@ -37,6 +38,7 @@ Dependencies.propTypes = {
   dependencies: PropTypes.array.isRequired,
   devDependencies: PropTypes.array.isRequired,
   onDependencyClick: PropTypes.func.isRequired,
+  onAddClick: PropTypes.func.isRequired,
 };
 
 export default connect(
@@ -54,6 +56,7 @@ export default connect(
     bindActionCreators(
       {
         onDependencyClick: actions.removeDependency,
+        onAddClick: actions.addDependency,
       },
       dispatch,
     ),

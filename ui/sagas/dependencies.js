@@ -8,3 +8,8 @@ export function* removeDependency({ name }) {
   const reader = yield call(getStream, `/dependencies/remove/${name}`);
   yield* streamToDispatch(reader, actions.scriptLogAppend);
 }
+
+export function* addDependency({ name }) {
+  const reader = yield call(getStream, `/dependencies/add/${name}`);
+  yield* streamToDispatch(reader, actions.scriptLogAppend);
+}
