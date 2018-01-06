@@ -1,4 +1,4 @@
-# npm UI
+# Dev UI
 
 ## Some guidelines
 
@@ -19,4 +19,4 @@ Other development is done frontend in a (modern) website which requests data and
 
 ## Questions
 
-[Open an issue](https://github.com/Haroenv/npm-ui/issues/new) :raised_hands:
+[Open an issue](https://github.com/Haroenv/dev-ui/issues/new) :raised_hands:
