@@ -11,18 +11,18 @@ describe('ansiCommandStream()', () => {
     jest.clearAllMocks();
   });
 
-  describe('with yarn installed', () => {
+  describe('with yarn', () => {
     beforeAll(() => {
       hasYarn.__setHasYarn(true);
     });
 
-    test('use `yarn remove`', () => {
+    test('uses `yarn remove`', () => {
       ansiCommandStream({ args: ['remove', 'lodash'] });
 
       expect(execa).toHaveBeenCalledTimes(1);
       expect(execa).toHaveBeenCalledWith('yarn', ['remove', 'lodash']);
     });
-    test('use `yarn add`', () => {
+    test('uses `yarn add`', () => {
       ansiCommandStream({ args: ['add', 'lodash'] });
 
       expect(execa).toHaveBeenCalledTimes(1);
@@ -30,19 +30,19 @@ describe('ansiCommandStream()', () => {
     });
   });
 
-  describe('when yarn is NOT installed', () => {
+  describe('without yarn', () => {
     beforeAll(() => {
       hasYarn.__setHasYarn(false);
     });
 
-    test('use `npm uninstall`', () => {
+    test('uses `npm uninstall`', () => {
       ansiCommandStream({ args: ['remove', 'lodash'] });
 
       expect(execa).toHaveBeenCalledTimes(1);
       expect(execa).toHaveBeenCalledWith('npm', ['uninstall', 'lodash']);
     });
 
-    test('use `npm install --save`', () => {
+    test('uses `npm install --save`', () => {
       ansiCommandStream({ args: ['add', 'lodash'] });
 
       expect(execa).toHaveBeenCalledTimes(1);
