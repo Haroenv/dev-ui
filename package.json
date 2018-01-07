@@ -33,12 +33,12 @@
   },
   "dependencies": {
     "ansi-html-stream": "^0.0.3",
+    "core-js": "^2.5.3",
     "execa": "^0.8.0",
     "fs-router": "^0.4.0",
     "get-monorepo-packages": "^1.0.1",
     "get-port": "^3.2.0",
     "has-yarn": "^1.0.0",
-    "lodash": "^4.17.4",
     "merge-stream": "^1.0.1",
     "micro": "^9.0.2",
     "micro-cors": "^0.0.4",
