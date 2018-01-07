@@ -1,3 +1,5 @@
+require('./src/polyfills');
+
 const cors = require('micro-cors')();
 const serveStatic = require('./src/serve')(__dirname + '/dist');
 const match = require('fs-router')(__dirname + '/routes');
