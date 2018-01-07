@@ -11,35 +11,46 @@ describe('ansiCommandStream()', () => {
     jest.clearAllMocks();
   });
 
-  test('when yarn is installed use `yarn remove`', () => {
-    hasYarn.__setHasYarn(true);
-    ansiCommandStream({ args: ['remove', 'lodash'] });
+  describe('with yarn installed', () => {
+    beforeAll(() => {
+      hasYarn.__setHasYarn(true);
+    });
 
-    expect(execa).toHaveBeenCalledTimes(1);
-    expect(execa).toHaveBeenCalledWith('yarn', ['remove', 'lodash']);
+    test('use `yarn remove`', () => {
+      ansiCommandStream({ args: ['remove', 'lodash'] });
+
+      expect(execa).toHaveBeenCalledTimes(1);
+      expect(execa).toHaveBeenCalledWith('yarn', ['remove', 'lodash']);
+    });
+    test('use `yarn add`', () => {
+      ansiCommandStream({ args: ['add', 'lodash'] });
+
+      expect(execa).toHaveBeenCalledTimes(1);
+      expect(execa).toHaveBeenCalledWith('yarn', ['add', 'lodash']);
+    });
   });
 
-  test('when yarn is not installed use `npm uninstall`', () => {
-    hasYarn.__setHasYarn(false);
-    ansiCommandStream({ args: ['remove', 'lodash'] });
+  describe('when yarn is NOT installed', () => {
+    beforeAll(() => {
+      hasYarn.__setHasYarn(false);
+    });
 
-    expect(execa).toHaveBeenCalledTimes(1);
-    expect(execa).toHaveBeenCalledWith('npm', ['uninstall', 'lodash']);
-  });
+    test('use `npm uninstall`', () => {
+      ansiCommandStream({ args: ['remove', 'lodash'] });
 
-  test('when yarn is installed use `yarn add`', () => {
-    hasYarn.__setHasYarn(true);
-    ansiCommandStream({ args: ['add', 'lodash'] });
+      expect(execa).toHaveBeenCalledTimes(1);
+      expect(execa).toHaveBeenCalledWith('npm', ['uninstall', 'lodash']);
+    });
 
-    expect(execa).toHaveBeenCalledTimes(1);
-    expect(execa).toHaveBeenCalledWith('yarn', ['add', 'lodash']);
-  });
+    test('use `npm install --save`', () => {
+      ansiCommandStream({ args: ['add', 'lodash'] });
 
-  test('when yarn is not installed use `npm install --save`', () => {
-    hasYarn.__setHasYarn(false);
-    ansiCommandStream({ args: ['add', 'lodash'] });
-
-    expect(execa).toHaveBeenCalledTimes(1);
-    expect(execa).toHaveBeenCalledWith('npm', ['install', '--save', 'lodash']);
+      expect(execa).toHaveBeenCalledTimes(1);
+      expect(execa).toHaveBeenCalledWith('npm', [
+        'install',
+        '--save',
+        'lodash',
+      ]);
+    });
   });
 });
