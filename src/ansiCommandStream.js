@@ -3,7 +3,6 @@ const execa = require('execa');
 const merge = require('merge-stream');
 const ansi = require('ansi-html-stream');
 
-
 // use this function to adjust arguments to yarn or npm
 const adjustSubCommand = arg => {
   switch (arg) {
