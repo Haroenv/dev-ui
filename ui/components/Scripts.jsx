@@ -8,25 +8,20 @@ import { selectors, actions } from '../ducks/scripts';
 import { selectors as packageSelectors } from '../ducks/packages';
 
 import ScriptList from './ScriptList';
-import { Wrapper, Log } from './styled';
 
-const Scripts = ({ scripts, log, onScriptClick }) => (
+const Scripts = ({ scripts, onScriptClick }) => (
   <Grid columns={2}>
     <Cell>
       <ScriptList scripts={scripts} onScriptClick={onScriptClick} />
     </Cell>
     <Cell>
-      <Wrapper>
-        <h3>Terminal output:</h3>
-        <Log dangerouslySetInnerHTML={{ __html: log }} />
-      </Wrapper>
+      <h1>Placeholder</h1>
     </Cell>
   </Grid>
 );
 
 Scripts.propTypes = {
   scripts: PropTypes.array.isRequired,
-  log: PropTypes.string.isRequired,
   onScriptClick: PropTypes.func.isRequired,
 };
 
@@ -36,7 +31,6 @@ export default connect(
       state.scripts,
       packageSelectors.getSelectedPackageName(state.packages),
     ),
-    log: selectors.getLog(state.scripts),
   }),
   dispatch =>
     bindActionCreators(
