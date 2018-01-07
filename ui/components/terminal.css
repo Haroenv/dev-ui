@@ -1,0 +1,48 @@
+.ansi-fg-black {
+  color: black;
+}
+.ansi-fg-red {
+  color: red;
+}
+.ansi-fg-green {
+  color: green;
+}
+.ansi-fg-yellow {
+  color: yellow;
+}
+.ansi-fg-blue {
+  color: blue;
+}
+.ansi-fg-magenta {
+  color: magenta;
+}
+.ansi-fg-cyan {
+  color: cyan;
+}
+.ansi-fg-white {
+  color: white;
+}
+.ansi-bg-black {
+  background-color: black;
+}
+.ansi-bg-red {
+  background-color: red;
+}
+.ansi-bg-green {
+  background-color: green;
+}
+.ansi-bg-yellow {
+  background-color: yellow;
+}
+.ansi-bg-blue {
+  background-color: blue;
+}
+.ansi-bg-magenta {
+  background-color: magenta;
+}
+.ansi-bg-cyan {
+  background-color: cyan;
+}
+.ansi-bg-white {
+  background-color: white;
+}
