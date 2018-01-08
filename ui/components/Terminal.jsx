@@ -28,19 +28,19 @@ const TerminalBackdrop = styled.div`
   top: 0;
   left: 0;
   opacity: ${props => (props.show ? 1 : 0)};
-  pointer-events: ${props => (props.show ? 'all' : 'none')};
+  visibility: ${props => (props.show ? 'visible' : 'hidden')};
   transition: 300ms;
 `;
-const Terminal = ({ text, show, hide }) => (
+const Terminal = ({ text, show, onBackdropClick }) => (
   <React.Fragment>
-    <TerminalBackdrop onClick={hide} show={show} />
+    <TerminalBackdrop onClick={onBackdropClick} show={show} />
     <TerminalContainer show={show} dangerouslySetInnerHTML={{ __html: text }} />
   </React.Fragment>
 );
 Terminal.propTypes = {
   text: PropTypes.string,
   show: PropTypes.bool,
-  hide: PropTypes.func,
+  onBackdropClick: PropTypes.func,
 };
 export default connect(
   state => ({
@@ -50,7 +50,7 @@ export default connect(
   dispatch =>
     bindActionCreators(
       {
-        hide: actions.hideTerminal,
+        onBackdropClick: actions.hideTerminal,
       },
       dispatch,
     ),
