@@ -8,8 +8,16 @@
     {
       "name": "Lucas Azzola",
       "url": "https://twitter.com/lucasazzola"
+    },
+    {
+      "name": "ranfdev",
+      "url": "https://github.com/ranfdev"
     }
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/haroenv/dev-ui.git"
+  },
   "bin": "./bin/dev-ui.js",
   "files": [
     "index.js",
