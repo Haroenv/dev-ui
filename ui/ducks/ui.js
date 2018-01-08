@@ -2,17 +2,11 @@ const initialState = {
   terminal: false,
 };
 
-const TOGGLE_TERMINAL = 'TOGGLE_TERMINAL';
 const SHOW_TERMINAL = 'SHOW_TERMINAL';
 const HIDE_TERMINAL = 'HIDE_TERMINAL';
 
 export default (state = initialState, { type }) => {
   switch (type) {
-    case TOGGLE_TERMINAL:
-      return {
-        ...state,
-        terminal: !!state.showTerminal,
-      };
     case SHOW_TERMINAL:
       return {
         ...state,
@@ -29,9 +23,6 @@ export default (state = initialState, { type }) => {
 };
 
 export const actions = {
-  toggleTerminal: () => ({
-    type: TOGGLE_TERMINAL,
-  }),
   showTerminal: () => ({
     type: SHOW_TERMINAL,
   }),
