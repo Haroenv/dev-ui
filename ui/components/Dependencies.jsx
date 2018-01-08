@@ -12,7 +12,7 @@ import Search from './Search';
 const Dependencies = ({
   dependencies = [],
   devDependencies = [],
-  onDependencyClick,
+  onRemoveClick,
   onAddClick,
 }) => (
   <Grid columns={2}>
@@ -20,12 +20,12 @@ const Dependencies = ({
       <h1>Dependencies</h1>
       <DependenciesList
         dependencies={dependencies}
-        onDependencyClick={onDependencyClick}
+        onRemoveClick={onRemoveClick}
       />
       <h1>DevDependencies</h1>
       <DependenciesList
         dependencies={devDependencies}
-        onDependencyClick={onDependencyClick}
+        onRemoveClick={onRemoveClick}
       />
     </Cell>
     <Cell>
@@ -37,7 +37,7 @@ const Dependencies = ({
 Dependencies.propTypes = {
   dependencies: PropTypes.array.isRequired,
   devDependencies: PropTypes.array.isRequired,
-  onDependencyClick: PropTypes.func.isRequired,
+  onRemoveClick: PropTypes.func.isRequired,
   onAddClick: PropTypes.func.isRequired,
 };
 
@@ -57,7 +57,7 @@ export default connect(
       dispatch(uiActions.showTerminal());
       dispatch(actions.addDependency(name));
     },
-    onDependencyClick: name => {
+    onRemoveClick: name => {
       dispatch(uiActions.showTerminal());
       dispatch(actions.removeDependency(name));
     },
