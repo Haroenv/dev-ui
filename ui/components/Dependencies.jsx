@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Grid, Cell } from 'styled-css-grid';
-
+import { bindActionCreators } from 'redux';
 import { selectors, actions } from '../ducks/dependencies';
-import { actions as uiActions } from '../ducks/ui';
 import { selectors as packageSelectors } from '../ducks/packages';
 import DependenciesList from './DependenciesList';
 import Search from './Search';
@@ -52,14 +51,12 @@ export default connect(
       packageSelectors.getSelectedPackageName(state.packages),
     ),
   }),
-  dispatch => ({
-    onAddClick: name => {
-      dispatch(uiActions.showTerminal());
-      dispatch(actions.addDependency(name));
-    },
-    onRemoveClick: name => {
-      dispatch(uiActions.showTerminal());
-      dispatch(actions.removeDependency(name));
-    },
-  }),
+  dispatch =>
+    bindActionCreators(
+      {
+        onAddClick: actions.addDependency,
+        onRemoveClick: actions.removeDependency,
+      },
+      dispatch,
+    ),
 )(Dependencies);

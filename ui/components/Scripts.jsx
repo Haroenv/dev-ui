@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Grid, Cell } from 'styled-css-grid';
-
+import { bindActionCreators } from 'redux';
 import { selectors, actions } from '../ducks/scripts';
-import { actions as uiActions } from '../ducks/ui';
 import { selectors as packageSelectors } from '../ducks/packages';
 
 import ScriptList from './ScriptList';
@@ -32,10 +31,11 @@ export default connect(
       packageSelectors.getSelectedPackageName(state.packages),
     ),
   }),
-  dispatch => ({
-    onScriptClick: name => {
-      dispatch(uiActions.showTerminal());
-      dispatch(actions.runScript(name));
-    },
-  }),
+  dispatch =>
+    bindActionCreators(
+      {
+        onScriptClick: actions.runScript,
+      },
+      dispatch,
+    ),
 )(Scripts);
