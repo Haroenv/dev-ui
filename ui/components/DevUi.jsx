@@ -3,7 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import Scripts from './Scripts';
 import Dependencies from './Dependencies';
 import PackageSelect from './PackageSelect';
-
+import Terminal from './Terminal';
 class DevUi extends Component {
   render() {
     return (
@@ -22,6 +22,7 @@ class DevUi extends Component {
             <Dependencies />
           </TabPanel>
         </Tabs>
+        <Terminal />
       </div>
     );
   }

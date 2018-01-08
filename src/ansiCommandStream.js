@@ -29,6 +29,8 @@ module.exports = function ansiCommandStream({
     // '--color="always"',
     ...adjustedArguments,
   ]);
-  const stream = merge(stdout, stderr).pipe(ansi({ chunked: true }));
+  const stream = merge(stdout, stderr).pipe(
+    ansi({ chunked: true, classes: true }),
+  );
   return { stream, kill };
 };
